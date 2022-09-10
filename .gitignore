@@ -19,6 +19,8 @@ domain/build/**
 infrastructure/build/**
 common/build/**
 
+local-env/
+
 
 ### STS ###
 .apt_generated
