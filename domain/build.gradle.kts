@@ -3,11 +3,10 @@ val springBootVersion: String by project
 plugins {
     id("org.springframework.boot")
     kotlin("jvm")
-    kotlin("plugin.spring")
-    kotlin("plugin.jpa")
 }
 
 dependencies {
+    /* KOTLIN DEPENDENCIES */
     implementation(kotlin("reflect"))
     implementation(kotlin("stdlib-jdk8"))
 }

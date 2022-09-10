@@ -20,14 +20,14 @@ dependencies {
     implementation(project(":domain"))
 
     /* KOTLIN DEPENDENCIES */
-    implementation("org.jetbrains.kotlin:kotlin-stdlib")
-    implementation("org.slf4j:slf4j-api:2.0.0")
+    implementation(kotlin("reflect"))
+    implementation(kotlin("stdlib-jdk8"))
 
     /* SPRING DEPENDENCIES */
     implementation("org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion")
 
     /* JACKSON DEPENDENCIES */
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.4")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 }
 
 buildscript {

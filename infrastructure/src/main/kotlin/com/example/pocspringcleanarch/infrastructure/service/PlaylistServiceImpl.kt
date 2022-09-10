@@ -1,11 +1,11 @@
-package service
+package com.example.pocspringcleanarch.infrastructure.service
 
 import com.example.pocspringcleanarch.domain.constants.Exceptions
 import com.example.pocspringcleanarch.domain.model.Playlist
 import com.example.pocspringcleanarch.domain.service.PlaylistService
 import org.springframework.stereotype.Service
-import persistence.mapper.PlaylistEntityMapper
-import persistence.repository.PlaylistRepository
+import com.example.pocspringcleanarch.infrastructure.persistence.mapper.PlaylistEntityMapper
+import com.example.pocspringcleanarch.infrastructure.persistence.repository.PlaylistRepository
 import java.util.*
 
 @Service

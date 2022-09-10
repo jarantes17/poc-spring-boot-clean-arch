@@ -1,8 +1,8 @@
-package persistence.mapper
+package com.example.pocspringcleanarch.infrastructure.persistence.mapper
 
 import com.example.pocspringcleanarch.common.infrastructure.persistence.EntityMapper
 import com.example.pocspringcleanarch.domain.model.Playlist
-import persistence.entity.PlaylistEntity
+import com.example.pocspringcleanarch.infrastructure.persistence.entity.PlaylistEntity
 import java.time.LocalDateTime
 import java.util.UUID
 

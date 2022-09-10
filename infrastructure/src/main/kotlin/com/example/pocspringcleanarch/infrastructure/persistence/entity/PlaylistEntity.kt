@@ -1,4 +1,4 @@
-package persistence.entity
+package com.example.pocspringcleanarch.infrastructure.persistence.entity
 
 import com.example.pocspringcleanarch.domain.PlaylistStatusEnum
 import org.hibernate.annotations.Type

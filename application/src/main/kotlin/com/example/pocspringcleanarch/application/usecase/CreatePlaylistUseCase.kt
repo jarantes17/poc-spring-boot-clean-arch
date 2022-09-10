@@ -6,6 +6,7 @@ import com.example.pocspringcleanarch.application.response.PlaylistResponse
 import com.example.pocspringcleanarch.common.application.RequestResponseUseCase
 import com.example.pocspringcleanarch.common.domain.annotations.UseCase
 import com.example.pocspringcleanarch.domain.service.PlaylistService
+import org.springframework.stereotype.Component
 
 @UseCase
 class CreatePlaylistUseCase(
