@@ -1,4 +1,8 @@
 package com.example.pocspringcleanarch.application.request
 
-class CreatePlaylistRequest {
-}
+import com.example.pocspringcleanarch.domain.PlaylistStatusEnum
+
+data class CreatePlaylistRequest(
+    val name: String,
+    val status: PlaylistStatusEnum,
+)

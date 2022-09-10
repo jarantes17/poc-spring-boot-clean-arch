@@ -8,6 +8,8 @@ plugins {
 }
 
 dependencies {
+    implementation(project(":domain"))
+
     implementation(kotlin("reflect"))
     implementation(kotlin("stdlib-jdk8"))
 

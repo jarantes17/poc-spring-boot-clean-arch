@@ -12,7 +12,7 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
 
     implementation("org.springframework:spring-context:5.3.22")
-    implementation("org.springframework.hateoas:spring-hateoas:1.12.11")
+    implementation("org.springframework.hateoas:spring-hateoas:1.5.1")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.4")
 }
 
