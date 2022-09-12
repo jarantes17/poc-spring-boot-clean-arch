@@ -6,6 +6,9 @@ plugins {
 }
 
 dependencies {
+    /* MODULE DEPENDENCIES */
+    implementation(project(":common"))
+
     /* KOTLIN DEPENDENCIES */
     implementation(kotlin("reflect"))
     implementation(kotlin("stdlib-jdk8"))

@@ -8,6 +8,7 @@ plugins {
 
 dependencies {
     /* MODULE DEPENDENCIES */
+    implementation(project(":common"))
     implementation(project(":domain"))
     implementation(project(":infrastructure"))
 

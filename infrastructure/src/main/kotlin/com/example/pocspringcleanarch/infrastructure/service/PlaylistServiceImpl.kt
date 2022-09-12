@@ -6,6 +6,7 @@ import com.example.pocspringcleanarch.domain.service.PlaylistService
 import org.springframework.stereotype.Service
 import com.example.pocspringcleanarch.infrastructure.persistence.mapper.PlaylistEntityMapper
 import com.example.pocspringcleanarch.infrastructure.persistence.repository.PlaylistRepository
+import org.springframework.transaction.annotation.Transactional
 import java.util.*
 
 @Service
@@ -25,6 +26,7 @@ class PlaylistServiceImpl(
     }
 
 
+    @Transactional
     override fun save(playlist: Playlist): Playlist {
         return PlaylistEntityMapper.mapFromEntity(
             playlistRepository.save(
@@ -33,6 +35,7 @@ class PlaylistServiceImpl(
         )
     }
 
+    @Transactional
     override fun update(playlist: Playlist): Playlist {
         return PlaylistEntityMapper.mapFromEntity(
             playlistRepository.save(

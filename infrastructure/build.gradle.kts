@@ -17,6 +17,7 @@ repositories {
 
 dependencies {
     /* MODULE DEPENDENCIES */
+    implementation(project(":common"))
     implementation(project(":domain"))
 
     /* KOTLIN DEPENDENCIES */

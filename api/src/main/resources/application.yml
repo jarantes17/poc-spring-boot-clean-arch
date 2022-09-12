@@ -1,1 +1,14 @@
+spring:
 
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+
+  datasource:
+    url: jdbc:postgresql://localhost:15432/postgres
+    hikari:
+      username: postgres
+      password: postgres
+      driver-class-name: org.postgresql.Driver
