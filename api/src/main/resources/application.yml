@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: POC-SPRING-CLEAN-ARCH
 
   jpa:
     database: POSTGRESQL
@@ -12,3 +14,15 @@ spring:
       username: postgres
       password: postgres
       driver-class-name: org.postgresql.Driver
+
+openapi:
+  version: 1.0.0
+  title: Spring Boot Clean Architecture Application
+  description: API with best practices based on architecture clean
+
+springdoc:
+  packagesToScan: com.example.pocspringcleanarch.api, com.example.pocspringcleanarch.application
+  paths-to-match: ["/api/v1/**"]
+  swagger-ui:
+    use-root-path: true
+

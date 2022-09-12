@@ -15,6 +15,10 @@ dependencies {
     implementation("org.springframework:spring-context:5.3.22")
     implementation("org.springframework.hateoas:spring-hateoas:1.5.1")
 
+    /* OPEN API DEPENDENCIES */
+    implementation("org.springdoc:springdoc-openapi-ui:1.6.11")
+    implementation("org.springdoc:springdoc-openapi-kotlin:1.6.11")
+
     /* JACKSON DEPENDENCIES */
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 }
