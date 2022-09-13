@@ -1,9 +1,9 @@
 package com.example.pocspringcleanarch.api.controller
 
 import com.example.pocspringcleanarch.api.ApiApplication
-import com.example.pocspringcleanarch.application.request.CreatePlaylistRequest
-import com.example.pocspringcleanarch.application.request.UpdatePlaylistRequest
-import com.example.pocspringcleanarch.application.response.PlaylistResponse
+import com.example.pocspringcleanarch.application.request.CreatePlaylistRequestDTO
+import com.example.pocspringcleanarch.application.request.UpdatePlaylistRequestDTO
+import com.example.pocspringcleanarch.application.response.PlaylistResponseDTO
 import com.example.pocspringcleanarch.application.usecase.*
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.responses.ApiResponse
@@ -37,7 +37,7 @@ class PlaylistController(
     )
     @GetMapping
     @ResponseStatus(value = HttpStatus.OK)
-    fun index(pageable: Pageable) : ResponseEntity<Page<PlaylistResponse>> {
+    fun index(pageable: Pageable) : ResponseEntity<Page<PlaylistResponseDTO>> {
         return ResponseEntity.ok(getAllPlaylistUseCase.execute(pageable))
     }
 
@@ -51,7 +51,7 @@ class PlaylistController(
     )
     @GetMapping("/{id}")
     @ResponseStatus(value = HttpStatus.OK)
-    fun detail(@PathVariable id: String): ResponseEntity<PlaylistResponse> {
+    fun detail(@PathVariable id: String): ResponseEntity<PlaylistResponseDTO> {
         return ResponseEntity.ok(getOnePlaylistUseCase.execute(id))
     }
 
@@ -64,8 +64,8 @@ class PlaylistController(
     )
     @PostMapping
     @ResponseStatus(value = HttpStatus.CREATED)
-    fun store(@RequestBody createPlaylistRequest: CreatePlaylistRequest, uriComponentsBuilder: UriComponentsBuilder): ResponseEntity<PlaylistResponse> {
-        val createdPlaylist = createPlaylistUseCase.execute(createPlaylistRequest)
+    fun store(@RequestBody createPlaylistRequestDTO: CreatePlaylistRequestDTO, uriComponentsBuilder: UriComponentsBuilder): ResponseEntity<PlaylistResponseDTO> {
+        val createdPlaylist = createPlaylistUseCase.execute(createPlaylistRequestDTO)
         val uriComponents = uriComponentsBuilder.path("/{id}").buildAndExpand(createdPlaylist.id)
         return ResponseEntity.created(uriComponents.toUri()).body(createdPlaylist)
     }
@@ -79,8 +79,8 @@ class PlaylistController(
     )
     @PatchMapping
     @ResponseStatus(value = HttpStatus.OK)
-    fun update(@RequestBody updatePlaylistRequest: UpdatePlaylistRequest): ResponseEntity<PlaylistResponse> {
-        return ResponseEntity.ok(updatePlaylistUseCase.execute(updatePlaylistRequest))
+    fun update(@RequestBody updatePlaylistRequestDTO: UpdatePlaylistRequestDTO): ResponseEntity<PlaylistResponseDTO> {
+        return ResponseEntity.ok(updatePlaylistUseCase.execute(updatePlaylistRequestDTO))
     }
 
     @Operation(description = "Endpoint to delete a playlist by id")

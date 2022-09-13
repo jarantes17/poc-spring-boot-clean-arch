@@ -6,6 +6,9 @@ import com.example.pocspringcleanarch.domain.service.PlaylistService
 import org.springframework.stereotype.Service
 import com.example.pocspringcleanarch.infrastructure.persistence.mapper.PlaylistEntityMapper
 import com.example.pocspringcleanarch.infrastructure.persistence.repository.PlaylistRepository
+import org.springframework.beans.BeanUtils
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
 import org.springframework.transaction.annotation.Transactional
 import java.util.*
 
@@ -14,8 +17,8 @@ class PlaylistServiceImpl(
     private val playlistRepository: PlaylistRepository
 ) : PlaylistService {
 
-    override fun findAll(): List<Playlist> {
-        return playlistRepository.findAll()
+    override fun findAll(pageable: Pageable): Page<Playlist> {
+        return playlistRepository.findAll(pageable)
             .map(PlaylistEntityMapper::mapFromEntity)
     }
 
@@ -37,6 +40,8 @@ class PlaylistServiceImpl(
 
     @Transactional
     override fun update(playlist: Playlist): Playlist {
+        this.findById(playlist.id.toString())
+
         return PlaylistEntityMapper.mapFromEntity(
             playlistRepository.save(
                 PlaylistEntityMapper.mapToEntity(playlist)

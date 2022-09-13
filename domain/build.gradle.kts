@@ -9,6 +9,9 @@ dependencies {
     /* MODULE DEPENDENCIES */
     implementation(project(":common"))
 
+    /* SPRING DEPENDENCIES */
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion")
+
     /* KOTLIN DEPENDENCIES */
     implementation(kotlin("reflect"))
     implementation(kotlin("stdlib-jdk8"))

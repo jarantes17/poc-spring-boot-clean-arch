@@ -20,7 +20,7 @@ class PlaylistEntity(
     val id: UUID,
 
     @Column(name="name")
-    val name: String,
+    var name: String,
 
     @Column(name = "status")
     @Enumerated(value = EnumType.STRING)

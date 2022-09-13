@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
 
-open class OpenAPIConfigurer : WebMvcConfigurer {
+interface OpenAPIConfigurer : WebMvcConfigurer {
 
     @Bean
-    open fun commonOpenAPI(
+    fun commonOpenAPI(
         @Value("\${openapi.version}") appVersion: String,
         @Value("\${openapi.title}") appTitle: String,
         @Value("\${openapi.description}") appDescription: String

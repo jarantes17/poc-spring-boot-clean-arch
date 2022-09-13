@@ -7,4 +7,5 @@ import java.util.UUID
 
 @Repository
 interface PlaylistRepository : JpaRepository<PlaylistEntity, UUID> {
+
 }

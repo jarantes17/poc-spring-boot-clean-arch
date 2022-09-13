@@ -4,7 +4,7 @@ import com.example.pocspringcleanarch.domain.PlaylistStatusEnum
 import java.time.LocalDateTime
 import java.util.*
 
-data class PlaylistResponse(
+data class PlaylistResponseDTO(
     val id: UUID,
     val name: String,
     val status: PlaylistStatusEnum,
